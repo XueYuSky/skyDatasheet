@@ -1,0 +1,39 @@
+C51 COMPILER V8.05a   MAIN                                                                 01/18/2010 18:35:22 PAGE 1   
+
+
+C51 COMPILER V8.05a, COMPILATION OF MODULE MAIN
+OBJECT MODULE PLACED IN main.obj
+COMPILER INVOKED BY: C:\Program Files\C51\BIN\C51.EXE Cfile\main.c BROWSE INCDIR(.\Cfile;.\Hfile) DEBUG OBJECTEXTEND PRI
+                    -NT(.\main.lst) OBJECT(main.obj)
+
+line level    source
+
+   1          #include "includes.h"
+   2          #include "code.h"
+   3          //#define C_
+   4          /*++++++++++++++++++++++++++++++++++++++++++++++++*/
+   5          //#define 
+   6          /*++++++++++++++++++++++++++++++++++++++++++++++++*/
+   7          void main(void){
+   8   1              char *p;
+   9   1              Init12864();
+  10   1              p=&code1;
+  11   1              AutoDischar(p,0,1);
+  12   1      //      WriteInst(MORFUN_F,1);
+  13   1      //      WriteInst(FB04_S,1);  
+  14   1              while(1);
+  15   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     19    ----
+   CONSTANT SIZE    =   1067    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

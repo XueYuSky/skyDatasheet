@@ -1,0 +1,232 @@
+<head>
+<title>BMM electronics</title>
+
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<META HTTP-EQUIV="Content-language" CONTENT="en-us">
+<META HTTP-EQUIV="Expires" CONTENT="8/15/2004">
+<META NAME="Robots" CONTENT="All">
+<META NAME="Revisit-after" CONTENT="7">
+<META NAME="Author" CONTENT="Jean Baptiste Guillaume Benoist - BMM electronics">
+<META NAME="Rating" CONTENT="General">
+<META NAME="Distribution" CONTENT="Global">
+<META NAME="Category" CONTENT="shopping">
+<META NAME="Date" CONTENT="8/14/2004">
+<META HTTP-EQUIV="Content-type" CONTENT="Text/html; charset=iso-8859-1">
+
+
+<SCRIPT Language="JavaScript">
+
+var swidth=150
+var sheight=125
+var sspeed=5
+
+var singletext=new Array()
+
+
+singletext[0]='<a target="_self" href="Product.asp?Product_ID=107"><img border="0" src="images/Data/cp21f.jpg" width="150" height="112"></a>'
+
+singletext[1]='<a target="_self" href="Product.asp?Product_ID=342"><img border="0" src="images/Data/hm303.jpg" width="150" height="112"></a>'
+
+singletext[2]='<a target="_self" href="Product.asp?Product_ID=637"><img border="0" src="images/Data/optsw1.jpg" width="150" height="112"></a>'
+
+singletext[3]='<a target="_self" href="Product.asp?Product_ID=820"><img border="0" src="images/Data/t25cf002.jpg" width="150" height="112"></a>'
+
+singletext[4]='<a target="_self" href="Product.asp?Product_ID=824"><img border="0" src="images/Data/W12cy001.jpg" width="150" height="112"></a>'
+
+singletext[5]='<a target="_self" href="Product.asp?Product_ID=1019"><img border="0" src="images/Data/cf256in.jpg" width="150" height="112"></a>'
+
+singletext[6]='<a target="_self" href="Product.asp?Product_ID=1215"><img border="0" src="images/Data/sbcru885.jpg" width="150" height="112"></a>'
+
+singletext[7]='<a target="_self" href="Product.asp?Product_ID=2273"><img border="0" src="images/Data/spikes.jpg" width="150" height="112"></a>'
+
+singletext[8]='<a target="_self" href="Product.asp?Product_ID=2612"><img border="0" src="images/Data/crb-300tcr.jpg" width="150" height="112"></a>'
+
+singletext[9]='<a target="_self" href="Product.asp?Product_ID=2620"><img border="0" src="images/Data/RC-113SW.jpg" width="150" height="112"></a>'
+
+singletext[10]='<a target="_self" href="Product.asp?Product_ID=2621"><img border="0" src="images/Data/mrd-200.jpg" width="150" height="112"></a>'
+
+singletext[11]='<a target="_self" href="Product.asp?Product_ID=2647"><img border="0" src="images/Data/sp-12a-300pa.jpg" width="150" height="112"></a>'
+
+singletext[12]='<a target="_self" href="Product.asp?Product_ID=2667"><img border="0" src="images/Data/mbf-83.jpg" width="150" height="112"></a>'
+
+singletext[13]='<a target="_self" href="Product.asp?Product_ID=2678"><img border="0" src="images/Data/spc-425l.jpg" width="150" height="112"></a>'
+
+singletext[14]='<a target="_self" href="Product.asp?Product_ID=2681"><img border="0" src="images/Data/so-167e.jpg" width="150" height="112"></a>'
+
+singletext[15]='<a target="_self" href="Product.asp?Product_ID=2685"><img border="0" src="images/Data/spp-280.jpg" width="150" height="112"></a>'
+
+singletext[16]='<a target="_self" href="Product.asp?Product_ID=2701"><img border="0" src="images/Data/mhd-170.jpg" width="150" height="112"></a>'
+
+singletext[17]='<a target="_self" href="Product.asp?Product_ID=2732"><img border="0" src="images/Data/sph-100al.jpg" width="150" height="112"></a>'
+
+singletext[18]='<a target="_self" href="Product.asp?Product_ID=2738"><img border="0" src="images/Data/sph-102kep.jpg" width="150" height="112"></a>'
+
+singletext[19]='<a target="_self" href="Product.asp?Product_ID=2774"><img border="0" src="images/Data/djp-400-si.jpg" width="150" height="112"></a>'
+
+singletext[20]='<a target="_self" href="Product.asp?Product_ID=1320"><img border="0" src="images/Data/mpx-470.jpg" width="150" height="112"></a>'
+
+singletext[21]='<a target="_self" href="Product.asp?Product_ID=2810"><img border="0" src="images/Data/830452.jpg" width="150" height="112"></a>'
+
+singletext[22]='<a target="_self" href="Product.asp?Product_ID=3125"><img border="0" src="images/Data/sn1.jpg" width="150" height="112"></a>'
+
+
+if (singletext.length>1)
+i=1
+else
+i=0
+
+function ticker1(){
+if (document.all){
+ieslider1.style.top=sheight
+iemarquee(ieslider1)
+}
+else if (document.layers){
+document.ns4slider.document.ns4slider1.top=sheight
+document.ns4slider.document.ns4slider1.visibility='show'
+ns4marquee(document.ns4slider.document.ns4slider1)
+}
+else if (document.getElementById&&!document.all){
+document.getElementById('ns6slider1').style.top=sheight
+ns6marquee(document.getElementById('ns6slider1'))
+}
+}
+function iemarquee(whichdiv){
+iediv=eval(whichdiv)
+if (iediv.style.pixelTop>0&&iediv.style.pixelTop<=sspeed){
+iediv.style.pixelTop=0
+setTimeout("iemarquee(iediv)",100)
+}
+if (iediv.style.pixelTop>=sheight*-1){
+iediv.style.pixelTop-=sspeed
+setTimeout("iemarquee(iediv)",100)
+}
+else{
+iediv.style.pixelTop=sheight
+iediv.innerHTML=singletext[i]
+if (i==singletext.length-1)
+i=0
+else
+i++
+}
+}
+function ns4marquee(whichlayer){
+ns4layer=eval(whichlayer)
+if (ns4layer.top>0&&ns4layer.top<=sspeed){
+ns4layer.top=0
+setTimeout("ns4marquee(ns4layer)",100)
+}
+if (ns4layer.top>=sheight*-1){
+ns4layer.top-=sspeed
+setTimeout("ns4marquee(ns4layer)",100)
+}
+else{
+ns4layer.top=sheight
+ns4layer.document.write(singletext[i])
+ns4layer.document.close()
+if (i==singletext.length-1)
+i=0
+else
+i++
+}
+}
+function ns6marquee(whichdiv){
+ns6div=eval(whichdiv)
+if (parseInt(ns6div.style.top)>0&&parseInt(ns6div.style.top)<=sspeed){
+ns6div.style.top=0
+setTimeout("ns6marquee(ns6div)",100)
+}
+if (parseInt(ns6div.style.top)>=sheight*-1){
+ns6div.style.top=parseInt(ns6div.style.top)-sspeed
+setTimeout("ns6marquee(ns6div)",100)
+}
+else{
+ns6div.style.top=sheight
+ns6div.innerHTML=singletext[i]
+if (i==singletext.length-1)
+i=0
+else
+i++
+}
+}
+</SCRIPT>
+<meta name="description" content="BMM links.">
+<meta name="keywords" content="www.bmm-electronics.com, elektronica, electronics, electronica, audi, hifi, hi-fi, geluid, sound, versterker, amplifier, voorversterker, preamplifier, eindversterker, bi-amping, biamping, actieve luidsprekers, eindversterkermodule, vermogensversterker, digitaal, digitaal geluid, digitale audio, digital audio, spdif, toslink, da converter, ad converter, IEC958 1989-03, EBU, EIAJ CP-340, filter, Linkwitz-Riley, Linkwitz Riley, Butterworth, electronica, elektronica, electronics, opamps, ic, geintegreerde schakeling, weerstand, resistor, condensator, capacitor, schema, printplaat, pcb, componenten, analoog, transistor, bouwpakketten, diy, zelfbouwen, voeding, powersupply, amplimo, multimedia, multi media, luidsprekers, loudspeakers, Jean Baptiste Guillaume Benoist">
+<base target="_self">
+
+<script>
+function size(){ 
+self.resizeTo(800,750)
+self.moveTo(10,10)
+}
+</script>
+</head>
+<body onload="size()" onmouseover="window.status='BMM electronics';return true;" leftmargin="25" rightmargin="25" topmargin="0" bgcolor="#EEEEEE">
+<SCRIPT language="JavaScript">
+<!-- Begin
+function movepic(img_name,img_src) {
+document[img_name].src=img_src;
+}
+// End -->
+</SCRIPT>
+
+<link href="/bmm.css" rel="stylesheet" type="text/css">
+<table border="0" cellspacing="0" style="margin:0; border-collapse: collapse" bordercolor="#FFFFFF" width="100%" id="AutoNumber1" cellpadding="0">
+
+  <tr>
+    <td align="center" bgcolor="#EEEEEE" rowspan="2" style="border-bottom: 1px solid #bb2020">
+    <img border="0" src="images/Applicatie/bmm_logo_top.gif" width="170" height="25"></td>
+    <td valign="bottom" align="center" bgcolor="#EEEEEE">
+    <font size="2">&nbsp;</font></td>
+    <td rowspan="2" align="center" style="border-bottom: 1px solid #bb2020" bgcolor="#EEEEEE">
+    <a href="lang.asp?lang=NL"><img border="0" src="images/Applicatie/flag_nl.gif" width="24" height="15"></a><font face="Verdana" size="1"> <a href="lang.asp?lang=NL">Nederlands</a></font></td>
+  </tr>
+  <tr>
+    <td align="center" style="border-bottom: 1px solid #bb2020" bgcolor="#EEEEEE">
+<A HREF="intro.asp" target="_self" onmouseover="movepic('welkom','images/Applicatie/welcome_2.gif')" onmouseout="movepic('welkom','images/Applicatie/welcome.gif')"><IMG NAME="welkom" SRC="images/Applicatie/welcome.gif" border="0" width="61" height="18"></A><A HREF="Alg.asp?pagina=39" target="_self" onmouseover="movepic('producten','images/Applicatie/products_2.gif')" onmouseout="movepic('producten','images/Applicatie/products.gif')"><IMG NAME="producten" SRC="images/Applicatie/products.gif" border="0" width="67" height="18" ></A><A HREF="Producten_B.asp?Productgroep_ID=7" target="_self" onmouseover="movepic('bouwkits','images/Applicatie/diy_kits_2.gif')" onmouseout="movepic('bouwkits','images/Applicatie/diy_kits.gif')"><IMG NAME="bouwkits" SRC="images/Applicatie/diy_kits.gif" border="0" width="63" height="18" ></A><A HREF="Projecten.asp" target="_self" onmouseover="movepic('projecten','images/Applicatie/projects_2.gif')" onmouseout="movepic('projecten','images/Applicatie/projects.gif')"><IMG NAME="projecten" SRC="images/Applicatie/projects.gif" border="0" width="65" height="18"></A><A HREF="Nieuws.asp" target="_self" onmouseover="movepic('nieuws','images/Applicatie/news_2.gif')" onmouseout="movepic('nieuws','images/Applicatie/news.gif')"><IMG NAME="nieuws" SRC="images/Applicatie/news.gif" border="0" width="48" height="18" ></A><A HREF="winkelmand.asp?wm=0&bw=0&aantal=0&order=0&wis=0" target="_self" onmouseover="movepic('winkelmand','images/Applicatie/cart_2.gif')" onmouseout="movepic('winkelmand','images/Applicatie/cart.gif')"><IMG NAME="winkelmand" SRC="images/Applicatie/cart.gif" border="0" width="92" height="18" ></A></td>
+  </tr>
+    <tr>
+    <td bgcolor="#CCCCCC" align="center">
+        <font size="2">&nbsp;</font><font face="Verdana" size="1"><img border="0" src="images/Applicatie/dot3rg.gif" width="10" height="10"><a target="_blank" href="Pagina_historie.asp"> your history</a></font></td>
+    <td bgcolor="#CCCCCC">
+        <font size="2">&nbsp;</font></td>
+    <td align="center" bgcolor="#CCCCCC">
+    <script Language="JavaScript" Type="text/javascript"><!--
+function FrontPage_Form1_Validator(theForm)
+{
+
+  if (theForm.zoek.value == "")
+  {
+    alert("Please enter a value for the \"zoek\" field.");
+    theForm.zoek.focus();
+    return (false);
+  }
+
+  if (theForm.zoek.value.length < 1)
+  {
+    alert("Please enter at least 1 characters in the \"zoek\" field.");
+    theForm.zoek.focus();
+    return (false);
+  }
+  return (true);
+}
+//--></script><form method="POST" action="zoeken.asp" style="font-family: Verdana; font-size: 8 pt; margin: 0" onsubmit="return FrontPage_Form1_Validator(this)" language="JavaScript" name="FrontPage_Form1">
+<p style="margin-top: 0; margin-bottom: 0"><font size="1" face="Verdana">Search <input type="text" name="zoek" size="12" style="margin:-1 0; font-family: Verdana; font-size: 8 pt" value=""></font></form>
+    </td>
+  </tr>
+  </table><table width="100%" cellspacing="0" cellpadding="0" border="0" style="border-collapse: collapse" bordercolor="#111111">
+  <tbody>
+    <tr>
+      <td align="center"><b><font face="Verdana" size="2" color="#FF0000">
+      Datasheet 2SA1381</font></b></td>
+    </tr>
+    </tbody>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#FFFFFF" id="AutoNumber1" width="100%" height="100%">
+  <tr>
+    <td width="100%" align="center">
+    <iframe name="I1" src=Datasheets/sanyo/2SA1381.pdf marginwidth="1" marginheight="0" height="100%" width="100%" border="0" align="center">De browser ondersteunt geen in line frames of is momenteel zodanig geconfigureerd dat in line frames niet kunnen worden weergegeven.</iframe>
+    </tr>
+</table>
+</body>
+</html>

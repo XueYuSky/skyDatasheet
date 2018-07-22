@@ -1,2 +1,1 @@
-# skyDatasheet
-Including datasheet in electronic design.
+﻿# skyDatasheetIncluding datasheet in electronic design.# 大类划分如下- 01电阻- 02电容- 03电感- 04二极管- 05三极管_场效应管- 06集成芯片- 07晶振- 08保险丝- 09滤波器- 10显示类灯和液晶- 11PCBA模块- 12开关- 13继电器- 14变压器- 15散热器- 16传感器- 17连接器- 18天线- 19电池和电池座- 20紧固件及螺栓- 21（保留）- 22音频- 其它未分类

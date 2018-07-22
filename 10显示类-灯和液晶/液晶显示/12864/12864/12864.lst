@@ -1,0 +1,153 @@
+C51 COMPILER V8.05a   12864                                                                01/18/2010 18:35:22 PAGE 1   
+
+
+C51 COMPILER V8.05a, COMPILATION OF MODULE 12864
+OBJECT MODULE PLACED IN 12864.obj
+COMPILER INVOKED BY: C:\Program Files\C51\BIN\C51.EXE Cfile\12864.c BROWSE INCDIR(.\Cfile;.\Hfile) DEBUG OBJECTEXTEND PR
+                    -INT(.\12864.lst) OBJECT(12864.obj)
+
+line level    source
+
+   1          #define _12864_C
+   2          #include "includes.h"
+   3          sbit RS_12864   =P2^0;     //RS
+   4          sbit RW_12864   =P2^1;   //RW
+   5          sbit E_12864    =P2^2;   //E
+   6          sbit PSB_12864  =P2^3;
+   7          sbit RESET_12864=P2^5;
+   8          void WriteInst(uchar Inst,bit b){
+   9   1              if(b)TestBusy();
+  10   1              RS_12864=L;
+  11   1              RW_12864=L;
+  12   1      //      _nop_();
+  13   1              E_12864 =H;
+  14   1      //      _nop_();
+  15   1          D_12864 =Inst;
+  16   1              E_12864 =L;
+  17   1      //      _nop_();
+  18   1      }
+  19          uchar ReadBusy(void){
+  20   1              uchar Busy_8;
+  21   1              D_12864=0xFF;
+  22   1              RS_12864=L;
+  23   1              RW_12864=H;
+  24   1              _nop_();
+  25   1              E_12864 =H;
+  26   1              _nop_();
+  27   1              Busy_8=D_12864; 
+  28   1              E_12864 =L;
+  29   1              _nop_();
+  30   1              D_12864=0xFF;
+  31   1              RS_12864=L;
+  32   1              RW_12864=H;
+  33   1              _nop_();
+  34   1              E_12864 =H;
+  35   1              _nop_();
+  36   1              Busy_8=D_12864; 
+  37   1              E_12864 =L;
+  38   1              _nop_();
+  39   1              return Busy_8;
+  40   1      }
+  41          void TestBusy(void){
+  42   1              bit b=0;
+  43   1              uchar busy;
+  44   1              do{
+  45   2              busy=ReadBusy();
+  46   2              b=(bit)(busy&0x80);
+  47   2              }while(b);
+  48   1      }
+  49          void WriteData(char Data){
+  50   1              TestBusy();
+  51   1              RS_12864=H;
+  52   1              RW_12864=L;
+  53   1      //      _nop_();
+  54   1              E_12864 =H;
+C51 COMPILER V8.05a   12864                                                                01/18/2010 18:35:22 PAGE 2   
+
+  55   1      //      _nop_();
+  56   1              D_12864=Data;
+  57   1              E_12864 =L;
+  58   1      //      _nop_();
+  59   1      }
+  60          uchar ReadData(void){
+  61   1              uchar Data;
+  62   1              RS_12864=H;
+  63   1              RW_12864=H;
+  64   1              _nop_();
+  65   1              E_12864 =H;
+  66   1              _nop_();
+  67   1              Data=D_12864;
+  68   1              E_12864 =L;
+  69   1              _nop_();
+  70   1              return Data;
+  71   1      }
+  72          //=======================================
+  73          void Init12864(void){
+  74   1              Delay5ms(8);
+  75   1              RESET_12864=L;
+  76   1              Delay5ms(1);
+  77   1              RESET_12864=H;
+  78   1              Delay5ms(1);
+  79   1              WriteInst(0X38,0);
+  80   1              Delay5ms(1);
+  81   1              WriteInst(0X38,0);
+  82   1              Delay5ms(1);
+  83   1              WriteInst(0X38,0);
+  84   1              Delay5ms(1);
+  85   1              WriteInst(0x38,1);
+  86   1              WriteInst(0X08,1);
+  87   1              WriteInst(0X01,1);
+  88   1              WriteInst(0X06,1);
+  89   1              WriteInst(0X0c,1);
+  90   1      }
+  91          //===========================================
+  92          void AutoDischar(char *p,uchar x,uchar y){
+  93   1              uchar yy;
+  94   1              WriteInst(0x38,1);
+  95   1              if(y==1)yy=0;
+  96   1              else if(y==2)yy=0x10;
+  97   1              else if(y==3)yy=0x08;
+  98   1              else yy=0x18;
+  99   1              WriteInst(0x80|x|yy,1);
+ 100   1              while(*p!='\0'){
+ 101   2                      WriteData(*p++);
+ 102   2              }
+ 103   1      }
+ 104          void MakePic(char *p){
+ 105   1              uchar i;
+ 106   1              uchar j;
+ 107   1              WriteInst(0x34,1);
+ 108   1              for(j=0;j<32;j++){
+ 109   2                              WriteInst(0x80|j,1);
+ 110   2                              WriteInst(0x80,1);
+ 111   2                              for(i=0;i<16;i++)WriteData(*p++);
+ 112   2              }
+ 113   1              for(j=0;j<32;j++){
+ 114   2                              WriteInst(0x80|j,1);
+ 115   2                              WriteInst(0x88,1);
+ 116   2                              for(i=0;i<16;i++)WriteData(*p++);
+C51 COMPILER V8.05a   12864                                                                01/18/2010 18:35:22 PAGE 3   
+
+ 117   2              }
+ 118   1              WriteInst(0x36,1);
+ 119   1      }
+ 120          
+ 121          /*
+ 122          void DisALine(char *p,uchar x,uchar y){
+ 123                  WriteInst(0x34,1);
+ 124          } 
+ 125          */
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    402    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----      12
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----       2
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

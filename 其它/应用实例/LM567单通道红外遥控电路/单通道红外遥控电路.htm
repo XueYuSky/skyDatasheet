@@ -1,0 +1,82 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0047)http://fuja.myrice.com/dzdiy-sub/dzdiy-019.html -->
+<HTML><HEAD><TITLE>单通道红外遥控电路</TITLE>
+<META content="text/html; charset=gb2312" http-equiv=Content-Type>
+<META content="MSHTML 5.00.2614.3500" name=GENERATOR>
+<META content=FrontPage.Editor.Document name=ProgId>
+<META content="t, default" name="Microsoft Border"></HEAD>
+<BODY><!--msnavigation-->
+<TABLE border=0 cellPadding=0 cellSpacing=0 width="100%">
+  <TBODY>
+  <TR>
+    <TD bgColor=#cce6ff>
+      <DIV align=center>
+      <CENTER>
+      <TABLE border=1 borderColor=#ffff00 cellPadding=0 cellSpacing=0 height=63 
+      style="BORDER-COLLAPSE: collapse" width="100%">
+        <TBODY>
+        <TR>
+          <TD colSpan=6 height=35 width="100%"><IMG border=0 height=59 
+            src="单通道红外遥控电路.files/fuja-image1.gif" width=280><IMG border=0 
+            height=63 src="单通道红外遥控电路.files/weltrain.gif" width=417></TD></TR>
+        <TR>
+          <TD align=middle bgColor=#99ccff height=13 vAlign=bottom 
+            width="16%"><B><FONT size=2><A 
+            href="http://fuja.myrice.com/index1.htm">返回首页</A> </FONT></B></TD>
+          <TD align=middle bgColor=#99ccff borderColor=#ffff00 
+          borderColorDark=#c0c0c0 borderColorLight=#ffff00 height=13 
+          vAlign=bottom width="16%"><B><FONT size=2><A 
+            href="http://fuja.myrice.com/cpxx.html">产品信息</A></FONT></B></TD>
+          <TD align=middle bgColor=#99ccff height=13 vAlign=bottom 
+            width="17%"><B><FONT size=2><A 
+            href="http://fuja.myrice.com/jszc.html">技术支持</A></FONT></B></TD>
+          <TD align=middle bgColor=#99ccff height=13 vAlign=bottom 
+            width="17%"><B><FONT size=2>相关链接</FONT></B></TD>
+          <TD align=middle bgColor=#99ccff height=13 vAlign=bottom 
+            width="17%"><B><FONT size=2>相关下载</FONT></B></TD>
+          <TD align=middle bgColor=#99ccff height=13 vAlign=bottom 
+            width="17%"><B><FONT size=2>关于我们</FONT></B></TD></TR>
+        <TR>
+          <TD align=middle bgColor=#99ccff height=13 vAlign=bottom 
+            width="16%"><B><FONT size=2><A 
+            href="http://fuja.myrice.com/dpj.html">单片机</A></FONT></B></TD>
+          <TD align=middle bgColor=#99ccff height=13 vAlign=bottom 
+            width="16%"><B><FONT size=2><A 
+            href="http://fuja.myrice.com/dlzb.html">电力载波</A></FONT></B></TD>
+          <TD align=middle bgColor=#99ccff height=13 vAlign=bottom 
+            width="17%"><B><FONT size=2><A 
+            href="http://fuja.myrice.com/edarj.html">EDA 软件</A> </FONT></B></TD>
+          <TD align=middle bgColor=#99ccff height=13 vAlign=bottom 
+            width="17%"><B><FONT size=2><A 
+            href="http://fuja.myrice.com/znjq.html">智能机器</A></FONT></B></TD>
+          <TD align=middle bgColor=#99ccff height=13 vAlign=bottom 
+            width="17%"><FONT size=2><B><A 
+            href="http://fuja.myrice.com/dzdiy.html">电子DIY</A></B></FONT></TD>
+          <TD align=middle bgColor=#99ccff height=13 vAlign=bottom 
+            width="17%"><B><FONT size=2><A 
+            href="http://fuja.myrice.com/lyb.html">留言薄</A></FONT></B></TD></TR></TBODY></TABLE></CENTER></DIV></TD></TR><!--msnavigation--></TBODY></TABLE><!--msnavigation-->
+<TABLE border=0 cellPadding=0 cellSpacing=0 dir=ltr width="100%">
+  <TBODY>
+  <TR><!--msnavigation-->
+    <TD vAlign=top><FONT size=4>
+      <P align=center><FONT size=5><STRONG><SPAN 
+      class=tm>单通道红外遥控电路</SPAN></STRONG></FONT></P>
+      <P align=center><FONT size=3>李洪明</FONT></P>
+      <P align=left><FONT face=宋体 
+      size=3>　　在不需要多路控制的应用场合，可以使用由常规集成电路组成的单通道红外遥控电路。这种遥控电路不需要使用较贵的专用编译码器，因此成本较低。<BR>　　单通道红外遥控发射电路如图1所示。在发射电路中使用了一片高速CMOS型四重二输入“与非”门74HC00。其中“与非”门3、4组成载波振荡器，振荡频率f0调在38kHz左右；“与非”门1、2组成低频振荡器，振荡频率f1不必精确调整。f1 
+      对f0进行调制，所以从“与非”门4输出的波形是断续的载波，这也是经红外发光二极管传送的波形。几个关键点的波形如图2所示，图中B′波形是A点不加调制波形而直接接高电平时B点输出的波形。由图2可以看出，当A点波形为高电平时，红外发光二极管发射载波；当A点波形为低电平时，红外发光二极管不发射载波。这一停一发的频率就是低频振荡器频率f1。 
+      在红外发射电路中为什么不采用价格低廉的低速CMOS四重二输入“与非”门CD4011，而采用价格较高的74HC00呢？主要是由于电源电压的限制。红外发射器的外壳有多种多样，但电源一般都设计成3V，使用两节5号或7号电池作电源。虽然CD4011的标称工作电压为3～18V，但却是对处理数字信号而言的。因为这里CMOS“与非”门是用作振荡产生方波信号的，即模拟应用，所以它的工作电压至少要4.5V才行，否则不易起振，影响使用。而74HC系列的CMOS数字集成电路最低工作电压为2V，所以使用3V电源便“得心应手”了。74HC00的引脚功能如图3所示。</FONT></P>
+      <P align=center><IMG alt="t5301.gif (3314 bytes)" height=135 
+      src="单通道红外遥控电路.files/t5301.gif" width=300></P>
+      <P align=center><IMG alt="t5302.gif (1926 bytes)" height=81 
+      src="单通道红外遥控电路.files/t53020.gif" width=200></P>
+      <P align=center><IMG alt="t5303.gif (2372 bytes)" height=103 
+      src="单通道红外遥控电路.files/t53030.gif" width=200></P>
+      <P align=left><FONT face=宋体 
+      size=3>　　图4为红外接收解调控制电路。图中，IC1是LM567。LM567是一片锁相环电路，采用8脚双列直插塑封。其⑤、⑥脚外接的电阻和电容决定了内部压控振荡器的中心频率f2，f2≈1/1.1RC。其①、②脚通常分别通过一电容器接地，形成输出滤波网络和环路单级低通滤波网络。②脚所接电容决定锁相环路的捕捉带宽：电容值越大，环路带宽越窄。①脚所接电容的容量应至少是②脚电容的2倍。③脚是输入端，要求输入信号≥25mV。⑧脚是逻辑输出端，其内部是一个集电极开路的三极管，允许最大灌电流为100mA。LM567的工作电压为4.75～9V，工作频率从直流到500kHz，静态工作电流约8mA。LM567的内部电路及详细工作过程非常复杂，这里仅将其基本功能概述如下：当LM567的③脚输入幅度≥25mV、频率在其带宽内的信号时，⑧脚由高电平变成低电平，②脚输出经频率/电压变换的调制信号；如果在器件的②脚输入音频信号，则在⑤脚输出受②脚输入调制信号调制的调频方波信号。在图4的电路中我们仅利用了LM567接收到相同频率的载波信号后⑧脚电压由高变低这一特性，来形成对控制对象的控制。</FONT></P>
+      <P align=center><IMG alt="t5304.gif (3120 bytes)" height=132 
+      src="单通道红外遥控电路.files/t5304.gif" width=210></P>
+      <P align=left><FONT face=宋体 
+      size=3>　　弄清了LM567的基本工作原理和功能后，再来分析图4电路便非常简单了。IC1是红外接收头，它接收发射器发出的红外信号，其中心频率与发射器载波频率f0相同，经IC1解调后，在输出端OUT输出频率为f1的方波信号，也就是与图1中A点波形相同的信号。我们将LM567的中心频率调到与发射器中“与非”门1、2振荡频率相同，即使f2= 
+      f1。则当发射器发射信号时，LM567便开始工作，⑧脚由高电平变为低电平，利用这个变化的电平便可去控制各种对象。利用图4的电路，我们可以做成遥控开关，遥控家里的各种家用电器。<BR>　　实际上，利用图1和图4所示的电路，我们也可以较容易地将其改造成多路遥控电路。方法是：在发射器（图1）中将电阻R＊变成若干挡不同的数值，由此形成若干种频率不同的调制信号；在接收电路中，设置若干只LM567，其输入均来自红外接收头，各个LM567的振荡频率不同但与发射端一一对应。这样当发射器按压不同的按钮，接入不同的调制信号时，在接收端对应的LM567的⑧脚的电平就会发生变化，由此形成多路控制。严格说来，这属于一种频分多路，与数字编译码多路控制相比，缺点是调试比较复杂。但在有些场合，如在多路报警中，也有其一席之地。因在报警应用场合中，需要解决两路以上同时报警的问题时，用时分多路存在复杂的同步问题，在频宽允许的情况下用频分多路则很容易解决。</FONT></P></FONT><!--msnavigation--></TD></TR><!--msnavigation--></TBODY></TABLE></BODY></HTML>
+

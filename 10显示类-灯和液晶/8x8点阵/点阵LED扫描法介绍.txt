@@ -1,0 +1,58 @@
+点阵LED扫描法介绍
+            LED一般采用扫描式显示，实际运用分为三种方式：
+            （1）       点扫描； 
+            （2）       行扫描；
+            （3）       列扫描。
+            16×64=1024Hz，周期小于1ms即
+            可。若使用第二和第三种方式，则频率必须大于16×8=128Hz，周期小于7.8ms即可符合视觉暂留要求。此外一次驱动一列或一行（8颗LED）时需外加驱动电路提高电流，否则LED亮度会不足。如图3所示。
+            P1口控制扫描，用74HC164控制显示输出，使8×8点阵LED显示一个“×”的例程。如图（3）所示。
+                   MOV      SP,#70H          ;设堆栈指针
+                   MOV      50H,#07EH     ;设置发送的列数据(Y0~Y7)
+                   MOV      51H,#0BDH
+                   MOV      52H,#0DBH
+                   MOV      53H,#0E7H
+                   MOV      54H,#0E7H
+                   MOV      55H,#0DBH
+                   MOV      56H,#0BDH
+                   MOV      57H,#07EH
+                   CLR      CLEAR             ;初始化I/O口
+                   SETB      CLK
+                   SETB      DINA
+                   SETB     DINB
+                   SETB      CLEAR
+                   mov         r6,#8h              ;设置扫描次数
+                   mov        dptr,#09000h    ;读取扫描端口数据
+                   MOV      R1,#50H          ;指定列数据指针   
+            flashcy:          
+                   MOV      A,@R1            ;读取列数据
+                   MOV      R0,A
+                   INC        R1                    ;列数据指针加1
+                   CLR       A
+                   MOVC    A,@A+DPTR
+                   MOV      P1,#0FFH
+                   LCALL    SENDTO
+                   MOV      P1,A
+                   INC        DPTR
+                   LCALL   DELAY
+                   DJNZ      R6,flashcy
+                   SJMP      MAINLOOP
+            sendt                                     ;发送数据子程序
+                   PUSH      ACC
+                   CLR      CLK
+                   MOV      R7,#08H
+                   MOV      A,R0
+                   CLR       C
+            SENDCY:              
+                   RRC       A
+                   MOV      DINA,C
+                   SETB      CLK
+                   CLR        CLK
+                   DJNZ      R7,SENDCY
+                   POP       ACC
+                   RET
+            DELAY:  MOV     R7,#01        ;延时子程序
+                    DJNZ    R3,$
+                    DJNZ    R4,DELAY1
+                    DJNZ    R7,DELAY0
+                    RET 
+            DB   0FEH,0FDH,0FBH,0F7H,0EFH,0DFH,0BFH,07FH      ;X0~X7(列扫描)
